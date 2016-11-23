@@ -1,0 +1,37 @@
+<h1> nieuwe werkvergunning </h1>
+<hr>
+<%= form_for :enquiry, url: enquirys_path do |f| %>
+<p>
+	<%= f.label "Referentie" %>
+	<%= f.text_field :Reference %>
+</p>
+<p>
+	<%= f.label "Opmerking" %>
+	<%= f.text_area :Description %>
+</p>
+
+<p>
+	<%= f.label "Locatie:" %>
+	<%= f.select :Location, [['Chemiepark','chemiepark'],['Farmsum','farmsum'],['Winschoten','winschoten']] %>
+</p>
+
+<p>
+	<%= f.label "Aantal uitvoerenden" %>
+	<%= f.number_field :Amount %>
+</p>
+
+<p>
+	<%= f.label "Datum" %>
+	<%= f.date_select :Date %>
+</p>
+<p>
+	<%= f.label "Aanvangstijd" %>
+	<%= f.time_select :Time %>
+</p>
+
+<p>
+	<%= f.submit "Verzenden" %>
+</p>
+<% end %> 	
+
+<%= link_to 'Terug', enquirys_path %>

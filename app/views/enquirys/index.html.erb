@@ -1,0 +1,39 @@
+<h1>Listing enquirys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>referentie</th>
+      <th>Beschrijving</th>
+      <th>Locatie</th>
+      <th>Datum</th>
+      <th>Aantal uitvoerenden</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @enquirys.each do |enquiry| %>
+      <tr>
+        <td><%= enquiry.Reference %></td>
+        <td><%= enquiry.Description %></td>
+        <td><%= enquiry.Location %></td>
+       
+      
+        <td><%= link_to 'Destroy', enquiry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nieuwe werkvergunning', enquirys_path, method: :create %>
+
+
+<% if false %>
+<td><%= simple_format enquiry.Date %></td>  
+<td><%= simple_format enquiry.Amount %></td>
+<% end %>

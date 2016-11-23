@@ -1,0 +1,37 @@
+<h1>Deze map word niet gebruikt lijkt het!!!!! werkt niet</h1>
+
+
+<%= form_for @enquiry, method: :put, url: wizard_path do |f| %>
+  <% if f.object.errors.any? %>
+    <div class="error_messages">
+      <% f.object.errors.full_messages.each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Enquiry Basic</legend>
+
+    <div>
+      <%= f.label :reference %>
+      <%= f.text_field :reference %>
+    </div>
+
+    <div>
+      <%= f.label :Location %>
+      <%= f.text_field :location %>
+    </div>
+
+
+    <div>
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+
+    <div>
+      <%= f.submit 'Next Step' %>
+    </div>
+  </fieldset>
+<% end %>

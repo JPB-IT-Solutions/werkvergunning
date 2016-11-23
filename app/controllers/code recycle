@@ -1,0 +1,29 @@
+	def create
+	 @enquiry = Enquiry.new(params.require(:enquiry).permit(:Reference, :Description))
+  if @enquiry.save
+    flash[:notice] = "Je aanvraag is ingediend."
+   
+    
+  else
+    render :new
+	end
+
+
+def index
+	@enquirys =Enquiry.all
+end
+
+	def new
+  @enquiry = Enquiry.new
+	end
+
+	def create
+	 render plain: params[:enquiry].inspect
+	end
+
+	def show
+		@enquiry = Enquiry.find(params[:id])
+	end
+
+
+(params.require(:enquiry).permit(:Reference, :Description))

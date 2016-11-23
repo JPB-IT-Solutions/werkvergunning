@@ -1,0 +1,48 @@
+<%= form_for(@enquiry) do |f| %>
+  <% if @pet.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this pet from being saved:</h2>
+
+      <ul>
+      <% @enquiry.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  < <div class="field">
+      <%= f.label :reference %>
+      <%= f.text_field :reference %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Location %>
+      <%= f.text_field :location %>
+    </div>
+
+
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+    </div>
+
+  <div class="field">
+      <%= f.label :amount %>
+      <br />
+      <%= f.text_area :amount, rows: 10 %>
+    </div>
+
+    <  <div class="field">>
+      <%= f.label :date%>
+      <%= f.text_field :date %>
+    </div>
+
+    <  <div class="field">
+      <%= f.label :time%>
+      <%= f.text_field :time %>
+    </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

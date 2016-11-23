@@ -1,0 +1,13 @@
+<table>
+	<tr>
+		<th>Referentie</th>
+		<th>Opmerking</th>
+	</tr>
+
+	<% @enquirys.each do |enquiry| %>
+	<tr>
+		<td><%= enquiry.Reference %></td>
+		<td><%= enquiry.Description %> </td>
+	</tr>
+	<% end %>
+</table>
