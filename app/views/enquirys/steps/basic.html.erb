@@ -7,7 +7,7 @@
     </div>
   <% end %>
 
-  <fieldset>
+  <fieldset class= "enquiry">
     <legend>Enquiry Basic</legend>
 
     <div>
@@ -29,6 +29,12 @@
 
     <div>
       <%= f.submit 'Next Step' %>
+
+      <%# 24-11 MG knop die je terug stuurt naar de homepage %>
+      <%= button_tag "Annuleren", :type => 'button', :class => "subBtn", :onclick => "location.href = '#{root_path()}'" %>
+   
     </div>
+   
   </fieldset>
+
 <% end %>

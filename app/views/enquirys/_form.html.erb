@@ -1,5 +1,5 @@
 <%= form_for(@enquiry) do |f| %>
-  <% if @pet.errors.any? %>
+  <% if @enquiry.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@enquiry.errors.count, "error") %> prohibited this pet from being saved:</h2>
 
@@ -11,37 +11,52 @@
     </div>
   <% end %>
 
-  < <div class="field">
+  <div class="field">
       <%= f.label :reference %>
-      <%= f.text_field :reference %>
+      <%= f.text_field :Reference %>
     </div>
 
     <div class="field">
       <%= f.label :Location %>
-      <%= f.text_field :location %>
+      <%= f.text_field :Location %>
     </div>
 
 
     <div class="field">
       <%= f.label :description %>
-      <%= f.text_field :description %>
+      <%= f.text_field :Description %>
     </div>
 
   <div class="field">
       <%= f.label :amount %>
       <br />
-      <%= f.text_area :amount, rows: 10 %>
+      <%= f.text_area :Amount, rows: 10 %>
     </div>
 
-    <  <div class="field">>
+      <div class="field">>
       <%= f.label :date%>
-      <%= f.text_field :date %>
+      <%= f.text_field :Date %>
     </div>
 
-    <  <div class="field">
+      <div class="field">
       <%= f.label :time%>
-      <%= f.text_field :time %>
+      <%= f.text_field :Time %>
     </div>
+<%# 24/11 MG vanaf hier zijn de extra tabellen toegevoegd. bovenstaande werkt!!! -%>
+
+      <div class="field">
+      <%= f.label :Done %>
+      <%= enquiry_measures.text_field :done %>
+    </div>
+
+      <div class="field">
+      <%= f.label :Needed %>
+      <%= enquiry_measures.text_field :needed %>
+    </div>
+
+
+<%# 24/11 MG tot hier-%>
+
   <div class="actions">
     <%= f.submit %>
   </div>

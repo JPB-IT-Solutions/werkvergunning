@@ -1,4 +1,8 @@
+
+
+
 <h1>Listing enquirys</h1>
+
 
 <table>
   <thead>
@@ -20,9 +24,10 @@
         <td><%= enquiry.Reference %></td>
         <td><%= enquiry.Description %></td>
         <td><%= enquiry.Location %></td>
-       
+       <td><%= enquiry.Date %></td>
+       <td><%= enquiry.Amount %></td>
       
-        <td><%= link_to 'Destroy', enquiry, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', enquiry, method: :delete, data: { confirm: 'Weet u zeker dat u deze record wilt verwijderen?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,6 +36,8 @@
 <br>
 
 <%= link_to 'Nieuwe werkvergunning', enquirys_path, method: :create %>
+<br>
+
 
 
 <% if false %>

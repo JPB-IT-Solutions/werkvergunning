@@ -1,0 +1,46 @@
+<%= form_for @enquiry, method: :put, url: wizard_path do |f| %>
+  <% if f.object.errors.any? %>
+    <div class="error_messages">
+      <% f.object.errors.full_messages.each do |error| %>
+        <p><%= error %></p>
+      <% end %>
+    </div>
+  <% end %>
+
+  <fieldset>
+    <legend>Maatregelen</legend>
+       <%= f.fields_for :enquiry_measures do |enquiry_measures| %>
+                                <%= enquiry_measures.fields_for :measure do |measures| %>
+    <div>
+      <%= f.label :Maatregel %>
+      <br />
+      <%= collection_select(:measure, :enquiry_id, Enquiry.all, :id, :measurement) %>
+     <%# http://api.rubyonrails.org/classes/ActionView/Helpers/FormOptionsHelper.html#method-i-collection_select -%>
+    </div>
+     <div>
+      <%= f.label :Gereed %>
+      <br />
+      <%= enquiry_measures.text_field :done %>
+    </div>
+
+    <div>
+      <%= f.label :Verantwoordelijke %>
+      <br />
+      <%= enquiry_measures.text_field :responsible %>
+    </div>
+
+    <div>
+      <%= f.label :Benodigd %>
+      <br />
+      <%= enquiry_measures.text_field :needed %>
+    </div>       
+                    
+    <div>
+      <%= f.submit 'Next Step' %>
+    </div>
+
+          <% end %> <%# end of enquiry_measures.fields_for :measure %>
+    <% end %> <%# end of f.fields_for :enquiry_measures %>
+  </fieldset>
+<% end %>
+

@@ -27,6 +27,15 @@
 
     <div>
       <%= f.submit 'Next Step' %>
+          <%# knop naar vorige pagina %>
+      <%= button_to "vorige", enquirys_path %>
+
+  <%# 24-11 MG knop die je terug stuurt naar de homepage %>
+      <%= button_tag "Annuleren", :type => 'button', :class => "subBtn", :onclick => "location.href = '#{root_path()}'" %>
+
     </div>
+
+
   </fieldset>
 <% end %>
+

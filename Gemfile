@@ -46,5 +46,8 @@ group :development do
 
   #gem voor gebruik van multipage forms
   gem 'wicked'
+
+  #gem voor het encrypten van wachtwoorden. toegevoegd 28/11
+  	gem 'bcrypt-ruby', :require=>'bcrypt'
 end
 

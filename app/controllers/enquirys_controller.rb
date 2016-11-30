@@ -7,8 +7,8 @@ class EnquirysController < ApplicationController
     @enquirys = Enquiry.where.not(reference: nil)
 def new
   @enquiry = Enquiry.new
+ 
 	end
-
 		
 	   def create
     @enquiry = Enquiry.new
@@ -30,6 +30,9 @@ def new
   end
 
 end
+
+#24/11 MG opslaan van url voor terug knop:
+
 
  private
     # Use callbacks to share common setup or constraints between actions.

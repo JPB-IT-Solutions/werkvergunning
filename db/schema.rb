@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161121122442) do
+ActiveRecord::Schema.define(version: 20161130102304) do
 
   create_table "enquiries", force: :cascade do |t|
     t.string   "Reference",   limit: 255
@@ -42,6 +42,14 @@ ActiveRecord::Schema.define(version: 20161121122442) do
     t.string "type",        limit: 255
     t.date   "valid_from"
     t.date   "valid_to"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username",      limit: 255
+    t.string "email",         limit: 255
+    t.string "password_hash", limit: 255
+    t.string "password_salt", limit: 255
+    t.string "type",          limit: 255
   end
 
 end

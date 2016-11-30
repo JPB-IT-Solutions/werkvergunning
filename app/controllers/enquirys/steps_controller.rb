@@ -1,8 +1,7 @@
 class Enquirys::StepsController < ApplicationController
 include Wicked::Wizard
   steps *Enquiry.form_steps
-
-
+  
   def show
     @enquiry = Enquiry.find(params[:enquiry_id])
     render_wizard
@@ -10,7 +9,7 @@ include Wicked::Wizard
 
   def update
     @enquiry = Enquiry.find(params[:enquiry_id])
-    @enquiry.update(pet_params(step))
+    @enquiry.update(enquiry_params(step))
     render_wizard @enquiry
   end
 
@@ -22,8 +21,8 @@ include Wicked::Wizard
                              [:Reference, :Location, :Description]
                            when "when"
                              [:Amount, :Date]
-                          # when "instructions"
-                            # [:special_instructions]
+                           when "measurements"
+                            [:responsible]
                            end
 
     params.require(:enquiry).permit(permitted_attributes).merge(form_step: step)
